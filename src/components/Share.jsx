@@ -7,7 +7,7 @@ const Share = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/post", {
+      const res = await fetch("http://localhost:5000/api/ideas/post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -32,7 +32,7 @@ const Share = () => {
 
   return (
     <div className='bg-black min-h-screen text-white flex flex-col items-center p-4'>
-      <h1 className='text-2xl mb-4 my-6'>Feel free to Share your project ideas here!</h1>
+      <h1 className='md:text-2xl text-xl mb-4 my-6'>Feel free to Share your project ideas here!</h1>
 
       <form className=' bg-gray-950 border border-cyan-400 mt-20 p-6 rounded flex flex-col gap-4 w-full max-w-md' onSubmit={onSubmit}>
         <label htmlFor="name">Name</label>

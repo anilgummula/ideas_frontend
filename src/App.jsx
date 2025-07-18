@@ -16,7 +16,7 @@ const App = () => {
             </NavLink>
             <NavLink to="/share">
                 {({ isActive }) => (
-                    <span className={isActive ? "text-yellow-400 font-bold underline" : ""}>Share your ideas</span>
+                    <span className={isActive ? "text-yellow-400 font-bold underline" : ""}>Share your idea</span>
                 )}
             </NavLink>
             {/* <Link to="/share" className='focus:border-b-2'  >Share your idea</Link> */}
