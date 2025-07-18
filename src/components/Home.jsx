@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from "react";
 import IdeaCard from "./IdeaCard";
 
+const API_URL = import.meta.env.VITE_API_URL;
 const Home = () => {
   const [posts, setPosts] = useState([]);
-  const app_uri=process.env.VITE_APP_URI;
+
+  console.log(API_URL);
+  
 
   // Fetch posts from backend
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch(`${app_uri}/api/ideas/get`);
+        const res = await fetch(`${API_URL}/api/ideas/get`);
         const data = await res.json();
         setPosts(data);
       } catch (error) {
-        console.error("Error fetching posts:", error);
+        console.log("Error fetching posts:", error);
       }
     };
 
