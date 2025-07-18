@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link ,NavLink} from 'react-router-dom';
 import Home from './components/Home';
-import Share from './components/share';
+import Share from './components/Share';
 
 const App = () => {
   return (
