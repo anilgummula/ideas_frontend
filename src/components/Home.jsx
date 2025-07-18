@@ -3,12 +3,13 @@ import IdeaCard from "./IdeaCard";
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const app_uri=process.env.VITE_APP_URI;
 
   // Fetch posts from backend
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/ideas/get");
+        const res = await fetch(`${app_uri}/api/ideas/get`);
         const data = await res.json();
         setPosts(data);
       } catch (error) {

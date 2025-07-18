@@ -3,11 +3,13 @@ import React, { useState } from 'react';
 const Share = () => {
   const [name, setName] = useState(""); 
   const [idea, setIdea] = useState(""); 
+    const app_uri=process.env.VITE_APP_URI;
+
 
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/ideas/post", {
+      const res = await fetch(`${app_uri}/api/ideas/post`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
